@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+}
+.page_title{
+    font-size: 22px;
+    font-weight: 600;
+}
+.page_content{
+    background-color: #ffffff!important;
+    color: black;
+    box-shadow: 0 0 10px #888888;
+    padding: 10px;
+    margin-top: 10px;
+}
+.form-margin{
+    margin-bottom: 1rem;
+}
+.custom_form{
+    display: block;
+    width: 95%;
+    height: 34px;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-left: 5px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-top: 3px;
+}
+.button_types button{
+    float: right;
+    margin: 0 10px;
+}
+.button_types::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.error{
+    color: red;
+    margin: 0;
+    font-size: 12px;
+}
+button{
+    background-color: #007ced;
+    color: #ffffff;
+    padding: 7px 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+button:focus{
+    outline: unset;
+}
+.title_btn{
+    float: right;
+    font-size: 12px;
+    padding: 3px 5px;
+}

@@ -1,0 +1,38 @@
+tbody tr td{
+    text-align: center;
+}
+.actions .fa{
+    cursor: pointer;
+}
+.confirmation{
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+    width: 100%;
+}
+.confirmation_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px;
+    width: 34%;
+}
+.confirm_btns{
+    text-align: right;
+}
+
+
+.nonDt {
+    border-collapse: collapse;
+    width: 100%;
+} 
+.nonDt td, .nonDt th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}

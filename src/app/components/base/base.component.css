@@ -1,0 +1,24 @@
+.side_bar{
+    width: 18%;
+    float: left;
+    height: 100vh;
+    background-color: #1D1D2D;
+    color: #ffffff!important;
+    position: fixed;
+}
+.base{
+    width: 82%;
+    float: right;
+    background-color: #f8f9fc;
+    height: 100vh;
+}
+
+.header{
+    height: 51px;
+    position: fixed;
+    width: 82%;
+}
+.main_content{
+    margin-top: 51px;
+    padding: 10px;
+}

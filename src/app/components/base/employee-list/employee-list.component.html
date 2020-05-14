@@ -1,0 +1,56 @@
+<div class="page_title">Employees <button type="button" class="title_btn" routerLink="/employees/create">Create</button></div>
+<div class="page_content">
+    <h4>Using datatable</h4>
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Company name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees; let i = index">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.company_name }}</td>
+                <td>{{ employee.email_id }}</td>
+                <td class="actions"><i class="fa fa-eye" aria-hidden="true" routerLink="/employees/edit/{{employee.id}}"></i> <i class="fa fa-trash" aria-hidden="true" style="margin-left: 10px;" (click)="deleteEmployee(employee, i)"></i></td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Without using datatable</h4>
+    <div class="filters" style="margin-bottom: 10px;">
+        <input type="text" class="custom_form" style="width: 20%;" placeholder="Search..." (input)="searchEmployee($event)">
+    </div>
+    <table style="width:100%" class="nonDt">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Company name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of filteredEmp; let i = index">
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.company_name }}</td>
+                <td>{{ employee.email_id }}</td>
+            </tr>
+            <tr *ngIf="filteredEmp.length == 0"><td valign="top" colspan="4">No records!</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="confirmation" *ngIf="showConfirmation">
+   <div class="confirmation_inner">
+       <p>Are you sure?</p>
+       <div class="confirm_btns">
+            <button type="button" style="margin-right: 10px;" (click)="showConfirmation = false">No</button>
+           <button type="button" (click)="confirmDelete()">Yes</button>
+       </div>
+   </div> 
+</div>

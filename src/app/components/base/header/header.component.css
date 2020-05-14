@@ -1,0 +1,19 @@
+.top_nav{
+    height: 51px;
+    background-color: #ffffff!important;
+    color: black;
+    box-shadow: 0 0 10px #888888;
+}
+.top_nav ul{
+    text-align: right;
+}
+.top_nav ul li{
+    display: inline-block;
+    margin: 10px 10px 0px;;
+}
+.log_out{
+    cursor: pointer;
+    background-color: #ed0000;
+    padding: 5px;
+    color: #ffffff;
+}

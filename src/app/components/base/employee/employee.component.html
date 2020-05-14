@@ -1,0 +1,62 @@
+<div class="page_title">Employee details</div>
+<div class="page_content">
+    <div *ngIf="employee">
+        <div class="emp_details" *ngIf="!edit">
+            <div class="basic_info">
+                <img src="assets/img/{{employee.avatar}}" alt="" width="200px">
+                <h2>{{employee.name}}</h2>
+                <p><strong>Employee ID :</strong> {{employee.id}}</p>
+                <p><strong>Email :</strong> {{employee.email_id}}</p>
+                <p><strong>Company :</strong> {{employee.company_name}}</p>
+                <p><strong>Designation :</strong> {{employee.designation}}</p> 
+                <p><strong>Mobile :</strong> {{employee.mobile}}</p>
+                <button type="button" (click)="edit = true">Edit</button> 
+                <button type="button" routerLink="/employees" style="margin-left: 10px;">Back</button> 
+            </div>
+        </div>
+       <form [formGroup]="employeeForm" (ngSubmit)="editEmployee()" *ngIf="edit">
+           <div class="form-margin">
+              <label for="">Name:</label>
+              <input type="text" placeholder="Name" formControlName="name" class="custom_form"> 
+              <p class="error" *ngIf="submitted && employeeForm.get('name').invalid">*Name is required</p>
+           </div>
+           <div class="form-margin">
+            <label for="">Company Name:</label>
+            <input type="text" placeholder="Company name" formControlName="company_name" class="custom_form">
+            <p class="error" *ngIf="submitted && employeeForm.get('company_name').invalid">*Company Name is required</p> 
+         </div>
+         <div class="form-margin">
+            <label for="">Email:</label>
+            <input type="email" placeholder="Email id" formControlName="email_id" class="custom_form">
+            <p class="error" *ngIf="submitted && employeeForm.get('email_id').invalid">*Email id is required</p> 
+         </div>
+         <div class="form-margin">
+            <label for="">Mobile:</label>
+            <input type="number" placeholder="Mobile" formControlName="mobile" class="custom_form">
+            <p class="error" *ngIf="submitted && employeeForm.get('mobile').invalid">*Mobile is required</p>
+         </div>
+         <div class="form-margin">
+            <label for="">Designation:</label>
+            <select formControlName="designation" class="custom_form">
+                <option value="null" selected disabled>-select-</option>
+                <option value="Software Developer">Software Developer</option>
+                <option value="Senior Software Developer">Senior Software Developer</option>
+                <option value="Quality Assurance">Quality Assurance</option>
+                <option value="Technical Lead">Technical Lead</option>
+                <option value="Manager">Manager</option>
+            </select>
+            <p class="error" *ngIf="submitted && employeeForm.get('designation').invalid">*Designation is required</p>
+         </div>
+         <div class="form-margin avatar_img">
+            <label for="">Image:</label> <br>
+            <img src="assets/img/boy.png" alt="" [ngClass]="employeeForm.get('avatar').value == 'boy.png' ? 'avatar_selected' : null" (click)="setAvatar('boy.png')">
+            <img src="assets/img/girl.png" alt="" [ngClass]="employeeForm.get('avatar').value == 'girl.png' ? 'avatar_selected' : null" (click)="setAvatar('girl.png')">
+            <p class="error" *ngIf="submitted && employeeForm.get('avatar').invalid">*Avatar is required</p>
+         </div>
+         <div class="form-margin button_types">
+             <button type="submit">Update</button>
+             <button type="button" (click)="edit = false">Cancel</button>
+         </div>
+       </form> 
+    </div>
+</div>

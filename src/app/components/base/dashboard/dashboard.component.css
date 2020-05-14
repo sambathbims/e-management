@@ -1,0 +1,8 @@
+.total_employee{
+    width: 20%;
+    background-color: #ffffff!important;
+    color: black;
+    box-shadow: 0 0 10px #888888;
+    padding: 10px;
+    text-align: center;
+}
